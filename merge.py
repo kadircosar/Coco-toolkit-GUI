@@ -1,11 +1,9 @@
 import datetime
 import os
 import shutil
-
 from tqdm import tqdm
-
 from preprocess import PreProcess
-
+from report import AnalyzeCategories
 
 
 def merge_multiple_cocos(*args: list, merge_path: str, first_id: int, visualizer: bool):
@@ -79,6 +77,7 @@ def merge_multiple_cocos(*args: list, merge_path: str, first_id: int, visualizer
     preprocess.set_unique_class_id(first_id=0, back_grounds=True)
     preprocess.save_coco_file(directory=merged_path_ann, file_name="merge")
 
+    a = AnalyzeCategories(preprocess.coco)
     a.total_class_count()
     a.plot_class_pie_chart(visualizer)
     return preprocess.coco

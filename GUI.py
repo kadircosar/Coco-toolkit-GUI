@@ -89,7 +89,7 @@ def iter_dir(coco_dict):
                 e2.delete(0, END)
                 showinfo(title="Information", message="Dataset is ready")
             else:
-                list_coco.append([e5.get(), e6.get()])
+                list_coco.append([e6.get(), e5.get()])
                 e5.delete(0, END)
                 e6.delete(0, END)
                 showinfo(title="Information", message="Dataset is ready")
@@ -159,8 +159,8 @@ button_merge = Button(tab1, text="Merge", fg="black", bg="white",
                       command=lambda: [merge_multiple_cocos(list_coco, merge_path=list_out[0], first_id=int(e4.get()),
                                                            visualizer=cb.get()), clear(list_c=list_coco)])
 button_split = Button(tab2, text="Split", fg="black", bg="white",
-                      command=lambda: [PreProcess(PreProcess.reader(list_coco[0][1])).train_test_validation_split(
-                          image_path=list_coco[0][0], test_percent=int(e8.get()), validation_percent=int(e9.get()),
+                      command=lambda: [PreProcess(PreProcess.reader(list_coco[0][0])).train_test_validation_split(
+                          image_path=list_coco[0][1], test_percent=int(e8.get()), validation_percent=int(e9.get()),
                           out_path=list_out[0]), clear(list_coco)])
 
 button_merge.grid(row=10, column=0)
@@ -170,4 +170,4 @@ tabControl.pack(expand=1, fill="both")
 
 window.mainloop()
 
-
+print(list_coco)

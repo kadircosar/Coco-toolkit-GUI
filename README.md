@@ -1,4 +1,4 @@
-# Creating Coco-toolkit-GUI Executable File 
+# Creating Coco-toolkit-GUI 
 
 ## 1 - Run GUI from terminal
 

@@ -43,12 +43,17 @@ pip install pyinstaller
 
 ### Build Executable File
 
+
 ####  For Windows
+Please make sure you are in Coco-toolkit-GUI directory. Then run in terminal:
+
 ```bash
 pyinstaller.exe --onefile --icon=coco.ico GUI.py
 ```
 
 ####  For Linux 
+Please make sure you are in Coco-toolkit-GUI directory. Then run in terminal:
+
 ```bash
 pyinstaller --onefile --icon=coco.ico GUI.py
 ```
